@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>현장 위험성 평가표 작성</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<h2>현장 위험성 평가표 작성</h2>
+
+<div class="form">
+
+  <!-- 기본 정보 -->
+  <label>
+    점검자
+    <input type="text" id="inspector" placeholder="이름 입력">
+  </label>
+
+  <label>
+    점검일
+    <input type="date" id="date">
+  </label>
+
+  <label>
+    작업명 / 장소
+    <input type="text" id="location">
+  </label>
+
+  <!-- 체크박스 그룹 -->
+  <details>
+    <summary>기상 상태</summary>
+    <label><input type="checkbox" value="weather_clear"> 맑음</label>
+    <label><input type="checkbox" value="weather_rain"> 비</label>
+    <label><input type="checkbox" value="weather_snow"> 눈</label>
+    <label><input type="checkbox" value="weather_wind"> 강풍</label>
+  </details>
+
+  <details>
+    <summary>현장 특성</summary>
+    <label><input type="checkbox" value="site_road"> 도로 작업</label>
+    <label><input type="checkbox" value="site_height"> 고소 작업</label>
+    <label><input type="checkbox" value="site_narrow"> 협소 공간</label>
+  </details>
+
+  <details>
+    <summary>위험 요인</summary>
+    <label><input type="checkbox" value="risk_fall"> 추락</label>
+    <label><input type="checkbox" value="risk_electric"> 감전</label>
+    <label><input type="checkbox" value="risk_collision"> 충돌</label>
+  </details>
+
+  <button onclick="generateImage()">이미지 생성</button>
+  <button onclick="saveImage()">이미지 저장</button>
+</div>
+
+<canvas id="canvas"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
