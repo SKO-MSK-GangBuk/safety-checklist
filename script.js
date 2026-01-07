@@ -104,6 +104,10 @@ const checkPositions = {
   risk_boom:   { x: null, y: null }
 };
 
+/* ===== 실시간 미리보기 ===== */
+function redrawPreview() {
+  if (!templateImage.complete) return;
+
 /**
  * 이미지 생성
  */
