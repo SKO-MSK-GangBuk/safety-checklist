@@ -183,4 +183,25 @@ function saveImage() {
   link.href = canvas.toDataURL("image/png");
   link.click();
 }
+  function bindEtcToggle(checkboxId, textInputId) {
+  const checkbox = document.getElementById(checkboxId);
+  const textInput = document.getElementById(textInputId);
+
+  if (!checkbox || !textInput) return;
+
+  // 초기 상태
+  textInput.disabled = !checkbox.checked;
+  if (!checkbox.checked) textInput.value = "";
+
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      textInput.disabled = false;
+      textInput.focus();
+    } else {
+      textInput.disabled = true;
+      textInput.value = "";
+    }
+  });
+}
+
 
