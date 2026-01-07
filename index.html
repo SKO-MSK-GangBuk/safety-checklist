@@ -134,10 +134,16 @@
     <label><input type="checkbox" value="risk_boom" onchange="generateImage()"> 화재 / 폭발</label>
   </details>
 
-  <button onclick="saveImage()" style="background-color: #007bff; color: white; border: none; border-radius: 4px; font-weight: bold;">이미지 저장 (다운로드)</button>
+  <hr>
+  <p class="iphone-notice">아이폰 사용자는 아래 이미지를 <b>길게 눌러 저장</b>하세요.</p>
+  <button onclick="saveImage()" class="save-btn">PC/안드로이드 이미지 다운로드</button>
 </div>
 
-<canvas id="canvas"></canvas>
+<div id="result-container">
+    <img id="final-image" src="" alt="결과 이미지 미리보기">
+</div>
+
+<canvas id="canvas" style="display: none;"></canvas>
 
 <script src="script.js"></script>
 </body>
