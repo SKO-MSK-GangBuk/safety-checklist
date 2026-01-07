@@ -164,6 +164,13 @@ function generateImage() {
           ctx.fillText("✔", pos.x, pos.y);
         }
       });
+
+    document.addEventListener("DOMContentLoaded", () => {
+  bindEtcToggle("machine_ect", "machine_ect_text");
+  bindEtcToggle("site_site_ect", "site_ect_text");
+  bindEtcToggle("hot_ect", "hot_ect_text");
+  bindEtcToggle("cold_ect", "cold_ect_text");
+});
   };
 }
 
@@ -176,3 +183,4 @@ function saveImage() {
   link.href = canvas.toDataURL("image/png");
   link.click();
 }
+
