@@ -14,41 +14,147 @@
 
   <!-- 기본 정보 -->
   <label>
-    점검자
+    협력사명
+    <input type="text" id="son_company" placeholder="협력사명(SKO) 입력">
+  </label>
+
+  <label>
+    도급사명
+    <input type="text" id="mother_company" placeholder="도급사명 입력">
+  </label>
+
+<label>
+    일시
+    <input type="date" id="date" placeholder="날짜 입력">
+  </label>
+
+<label>
+    국소명
+    <input type="text" id="location" placeholder="국소명 입력">
+  </label>
+
+<label>
+    작업공종
+    <input type="text" id="what_do" placeholder="작업공종 입력">
+  </label>
+
+  <label>
+    투입인원
     <input type="text" id="inspector" placeholder="이름 입력">
-  </label>
-
-  <label>
-    점검일
-    <input type="date" id="date">
-  </label>
-
-  <label>
-    작업명 / 장소
-    <input type="text" id="location">
   </label>
 
   <!-- 체크박스 그룹 -->
   <details>
     <summary>기상 상태</summary>
     <label><input type="checkbox" value="weather_clear"> 맑음</label>
-    <label><input type="checkbox" value="weather_rain"> 비</label>
-    <label><input type="checkbox" value="weather_snow"> 눈</label>
     <label><input type="checkbox" value="weather_wind"> 강풍</label>
+    <label><input type="checkbox" value="weather_rain_or_snow"> 비/눈</label>
+    <label><input type="checkbox" value="weather_hot"> 폭염</label>
+    <label><input type="checkbox" value="weather_cold"> 한파</label>
   </details>
 
+  <label>
+    체감온도
+    <input type="text" id="fake_temperature" placeholder="체감 온도 입력">
+  </label>
+  
+  <label>
+    기온
+    <input type="text" id="real_temperature" placeholder="기온 입력">
+  </label>
+  
   <details>
     <summary>현장 특성</summary>
-    <label><input type="checkbox" value="site_road"> 도로 작업</label>
-    <label><input type="checkbox" value="site_height"> 고소 작업</label>
-    <label><input type="checkbox" value="site_narrow"> 협소 공간</label>
+    <label><input type="checkbox" value="site_road_outside"> 도로 가장 차선</label>
+    <label><input type="checkbox" value="site_road_inside"> 도로 중앙 차선(사이 차선, 교차로 포함)</label>
+    <label><input type="checkbox" value="site_road_narrow"> 골목길/농로/비포장</label>
+    <label><input type="checkbox" value="site_inside"> 구내(건물안)</label>
+    <label><input type="checkbox" value="site_in_height"> 천정 내 작업</label>
+    <label><input type="checkbox" value="site_high_height"> 높은 층고(5m 이상)</label>
+    <label><input type="checkbox" value="site_apart_parking"> 건물(아파트) 내 지하 주차장</label>
+    <label><input type="checkbox" value="site_drop_danger"> 자재, 공도구 낙하위험(시민재해)</label>
+    <label><input type="checkbox" value="site_near_road"> 도로변/터널/지하차도</label>
+    <label><input type="checkbox" value="site_near_voltage"> 전력선, 변압기 근접</label>
+    <label><input type="checkbox" value="site_near_hivoltage"> 특고압 방호관 설치 국소(미설치 작업중지)</label>
+    <label><input type="checkbox" value="site_site_ect"> 기타</label>
   </details>
+
+  <label>
+    현장 특이 사항
+    <input type="text" id="site_ect_text" placeholder="특이사항 존재 시 입력">
+  </label>
+
+  <details>
+    <summary>공통사항</summary>
+    <label><input type="checkbox" value="common_equipment"> 개인보호구 착용 및 주변 동료 보호구 착용 상태 확인</label>
+    <label><input type="checkbox" value="common_machine"> 건설장비 안전장치 확인(고소차, 굴착기, 크레인 등)</label>
+    <label><input type="checkbox" value="common_health"> 팀원 건강상태 / 컨디션 확인</label>
+    <label><input type="checkbox" value="common_tool"> 공도구 사용 전 점검</label>
+    <label><input type="checkbox" value="common_stop_work"> 작업중지 기준 준수(폭염/한파/강풍/강우/강설)</label>
+    <label><input type="checkbox" value="common_danger"> 작업장 유해 위험요인 확인. 유해충 및 구조물(고정,균열상태)</label>
+    <label><input type="checkbox" value="common_heavy"> 중량물 정보 및 취급에 관한 사항 확인</label>
+  </details>
+  
+ <details>
+    <summary>혹서기 용품 지참유무</summary>
+    <label><input type="checkbox" value="hot_thermometer"> 온습도계</label>
+    <label><input type="checkbox" value="hot_water"> 얼음물</label>
+    <label><input type="checkbox" value="hot_icebox"> 아이스박스</label>
+    <label><input type="checkbox" value="hot_candy"> 식엽정</label>
+    <label><input type="checkbox" value="hot_rest"> 휴게시설(파라솔 등)</label>
+    <label><input type="checkbox" value="hot_ect"> 기타</label>
+  </details>
+
+  <label>
+    혹서기 용품 기타 사항
+    <input type="text" id="hot_ect_text" placeholder="특이사항 존재 시 입력">
+  </label>
+
+  <details>
+    <summary>혹한기 용품 지참유무</summary>
+    <label><input type="checkbox" value="cold_warmer"> 학팩</label>
+    <label><input type="checkbox" value="cold_cloth"> 발열조끼</label>
+    <label><input type="checkbox" value="cold_ect"> 기타</label>
+  </details>
+
+  <label>
+    혹한기 용품 기타 사항
+    <input type="text" id="cold_ect_text" placeholder="특이사항 존재 시 입력">
+  </label>
+
+  <label>
+    추가 위험요인 및 대책 (체크항목 외)
+    <input type="text" id="danger_ect_point" placeholder="위험요인 입력">
+    <input type="text" id="danger_ect_todo" placeholder="위험요인 대책 입력">
+  </label>
+
+  <details>
+    <summary>작업장 환경</summary>
+    <label><input type="checkbox" value="site_roof"> 건물(옥상)</label>
+    <label><input type="checkbox" value="site_rooftop"> 건물(옥탑)</label>
+    <label><input type="checkbox" value="site_pool"> 전주</label>
+    <label><input type="checkbox" value="site_steel_tower"> 철탑</label>
+    <label><input type="checkbox" value="site_strong_pool"> 강관주</label>
+    <label><input type="checkbox" value="site_inbuilding"> 인빌딩(RF)</label>
+    <label><input type="checkbox" value="site_ect"> 기타</label>
+  </details>
+
+  <label>
+    작업장 환경 기타
+    <input type="text" id="site_ect_text" placeholder="작업장 특이사항 존재 시 입력">
+  </label>
 
   <details>
     <summary>위험 요인</summary>
-    <label><input type="checkbox" value="risk_fall"> 추락</label>
+    <label><input type="checkbox" value="risk_fall"> 떨어짐</label>
+    <label><input type="checkbox" value="risk_fall_ladder"> 떨어짐(이동식 사다리)</label>
+    <label><input type="checkbox" value="risk_fall_ladder_width"> 사다리 상부 가로서기(자세) 작업</label>
+    <label><input type="checkbox" value="risk_car_crush"> 주행차량에 의한 교통사고</label>
+    <label><input type="checkbox" value="risk_heavy_machine"> 건설장비에 부딫힘/끼임</label>
+    <label><input type="checkbox" value="risk_car_fall"> 넘어짐(인력/건설장비)</label>
     <label><input type="checkbox" value="risk_electric"> 감전</label>
-    <label><input type="checkbox" value="risk_collision"> 충돌</label>
+    <label><input type="checkbox" value="risk_drop"> 낙하물 발생</label>
+    <label><input type="checkbox" value="risk_boom"> 화재 / 폭발</label>
   </details>
 
   <button onclick="generateImage()">이미지 생성</button>
@@ -59,4 +165,5 @@
 
 <script src="script.js"></script>
 </body>
+
 </html>
