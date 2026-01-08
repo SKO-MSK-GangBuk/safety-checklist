@@ -64,8 +64,8 @@ function generateImage() {
   ctx.drawImage(templateImage, 0, 0);
 
   // 일반 텍스트 드로잉
-  drawTextAuto(document.getElementById("son_company").value, 100, 50, 200, 22);
-  drawTextAuto(document.getElementById("mother_company").value, 400, 50, 200, 22);
+  drawTextAuto(document.getElementById("son_company").value, 280, 210, 110, 22);
+  drawTextAuto(document.getElementById("mother_company").value, 655, 210, 155, 22);
   drawTextAuto(document.getElementById("date").value, 100, 80, 200, 22);
   drawTextAuto(document.getElementById("location").value, 400, 80, 200, 22);
   drawTextAuto(document.getElementById("what_do").value, 100, 110, 200, 22);
