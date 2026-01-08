@@ -36,25 +36,24 @@ function drawTextAuto(text, x, y, maxWidth, maxFontSize) {
 }
 
 /**
- * 모든 체크박스 좌표 매핑 (x, y 좌표는 실제 PNG에 맞춰 수정 필수)
- */
+ * 모든 체크박스 좌표 매핑 */
 const checkPositions = {
   // 기상 상태
   weather_clear: { x: 280, y: 492 }, weather_wind: { x: 375, y: 492 }, weather_rain_or_snow: { x: 470, y: 492 }, weather_hot: { x: 575, y: 492 }, weather_cold: { x: 670, y: 492 },
   // 건설장비
   machine_crane: { x: 280, y: 545 }, machine_sky: { x: 500, y: 545 }, machine_sj: { x: 623, y: 545 }, machine_labbercar: { x: 850, y: 545 }, machine_forklift: { x: 985, y: 545 }, machine_dumptruck: { x: 280, y: 575 }, machine_excavator: { x: 415, y: 575 }, machine_pumpcar: { x: 538, y:575 }, machine_mixtruck: { x: 660, y: 575 }, machine_ect: { x: 795, y: 575 },
   // 현장 특성
-  site_road_outside: { x: 285, y: 780 }, site_road_inside: { x: 285, y: 810 }, site_road_narrow: { x: 1155, y: 780 }, site_inside: { x: 285, y: 810 }, site_in_height: { x: 720, y: 780 }, site_high_height: { x: 720, y: 810 }, site_apart_parking: { x: 720, y: 840 }, site_drop_danger: { x: 720, y: 870 }, site_near_road: { x: 1155, y: 780 }, site_near_voltage: { x: 1155, y: 810 }, site_near_hivoltage: { x: 1155, y: 840 }, site_site_ect: { x: 1155, y: 840 },
+  site_road_outside: { x: 285, y: 780 }, site_road_inside: { x: 285, y: 810 }, site_road_narrow: { x: 285, y: 840 }, site_inside: { x: 285, y: 870 }, site_in_height: { x: 720, y: 780 }, site_high_height: { x: 720, y: 810 }, site_apart_parking: { x: 720, y: 840 }, site_drop_danger: { x: 720, y: 870 }, site_near_road: { x: 1155, y: 780 }, site_near_voltage: { x: 1155, y: 810 }, site_near_hivoltage: { x: 1155, y: 840 }, site_site_ect: { x: 1155, y: 870 },
   // 공통사항
-  common_equipment: { x: 100, y: 400 }, common_machine: { x: 150, y: 400 }, common_health: { x: 200, y: 400 }, common_tool: { x: 250, y: 400 }, common_stop_work: { x: 300, y: 400 }, common_danger: { x: 350, y: 400 }, common_heavy: { x: 400, y: 400 },
+  common_equipment: { x: 285, y: 1000 }, common_machine: { x: 285, y: 1030 }, common_health: { x: 285, y: 1060 }, common_tool: { x: 285, y: 1090 }, common_stop_work: { x: 285, y: 1120 }, common_danger: { x: 285, y: 1150 }, common_heavy: { x: 285, y: 1180 },
   // 혹서기
-  hot_thermometer: { x: 100, y: 500 }, hot_water: { x: 150, y: 500 }, hot_icebox: { x: 200, y: 500 }, hot_candy: { x: 250, y: 500 }, hot_rest: { x: 300, y: 500 }, hot_ect: { x: 350, y: 500 },
+  hot_thermometer: { x: 976, y: 1015 }, hot_water: { x: 976, y: 1045 }, hot_icebox: { x: 976, y: 1075 }, hot_candy: { x: 976, y: 1105 }, hot_rest: { x: 976, y: 1135 }, hot_ect: { x: 976, y: 1165 },
   // 혹한기
-  cold_warmer: { x: 100, y: 600 }, cold_cloth: { x: 150, y: 600 }, cold_ect: { x: 200, y: 600 },
+  cold_warmer: { x: 1360, y: 1030 }, cold_cloth: { x: 1360, y: 1060 }, cold_ect: { x: 1360, y: 1090 },
   // 작업장 환경
-  site_roof: { x: 100, y: 700 }, site_rooftop: { x: 150, y: 700 }, site_pool: { x: 200, y: 700 }, site_steel_tower: { x: 250, y: 700 }, site_strong_pool: { x: 300, y: 700 }, site_inbuilding: { x: 350, y: 700 }, site_ect: { x: 400, y: 700 },
+  site_roof: { x: 100, y: 1807 }, site_rooftop: { x: 100, y: 1867 }, site_pool: { x: 100, y: 1927 }, site_steel_tower: { x: 100, y: 1987 }, site_strong_pool: { x: 100, y: 2047 }, site_inbuilding: { x: 100, y: 2107 }, site_ect: { x: 100, y: 2167 },
   // 위험 요인
-  risk_fall: { x: 100, y: 800 }, risk_fall_ladder: { x: 150, y: 800 }, risk_fall_ladder_width: { x: 200, y: 800 }, risk_car_crush: { x: 250, y: 800 }, risk_heavy_machine: { x: 300, y: 800 }, risk_car_fall: { x: 350, y: 800 }, risk_electric: { x: 400, y: 800 }, risk_drop: { x: 450, y: 800 }, risk_boom: { x: 500, y: 800 }
+  risk_fall: { x: 285, y: 1440 }, risk_fall_ladder: { x: 285, y: 1550 }, risk_fall_ladder_width: { x: 315, y: 1580 }, risk_car_crush: { x: 285, y: 1665 }, risk_heavy_machine: { x: 285, y: 1750 }, risk_car_fall: { x: 285, y: 1875 }, risk_electric: { x: 285, y: 2015 }, risk_drop: { x: 285, y: 2140 }, risk_boom: { x: 285, y: 2265 }
 };
 
 function generateImage() {
