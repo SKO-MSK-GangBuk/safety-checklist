@@ -3,6 +3,7 @@ const ctx = canvas.getContext("2d");
 const finalImg = document.getElementById("final-image");
 
 const templateImage = new Image();
+templateImage.crossOrigin = "Anonymous";
 templateImage.src = "template.png";
 
 templateImage.onload = () => { generateImage(); };
