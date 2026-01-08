@@ -76,7 +76,7 @@ function generateImage() {
   drawTextAuto(document.getElementById("come_here").value, 1290, 560, 280, 24);
   drawTextAuto(document.getElementById("whatch_me").value, 1290, 625, 280, 24);
   drawTextAuto(document.getElementById("company_sos").value, 290, 685, 510, 24);
-  drawTextAuto(document.getElementById("mother_company_sos").value, 1340, 685, 510, 24);
+  drawTextAuto(document.getElementById("mother_company_sos").value, 1040, 685, 510, 24);
   drawTextAuto(document.getElementById("danger_ect_point").value, 290, 1305, 310, 24);
   drawTextAuto(document.getElementById("danger_ect_todo").value, 840, 1305, 725, 24);
 
@@ -84,7 +84,7 @@ function generateImage() {
   drawTextAuto(document.getElementById("machine_ect_text").value, 870, 575, 155, 20);
   drawTextAuto(document.getElementById("site_site_ect_text").value, 700, 300, 150, 20);
   drawTextAuto(document.getElementById("hot_ect_text").value, 1050, 1165, 120, 20);
-  drawTextAuto(document.getElementById("cold_ect_text").value, 14350, 1090, 120, 20);
+  drawTextAuto(document.getElementById("cold_ect_text").value, 1430, 1090, 120, 20);
   drawTextAuto(document.getElementById("site_ect_text").value, 170, 2165, 50, 20);
 
   // 체크박스 드로잉
