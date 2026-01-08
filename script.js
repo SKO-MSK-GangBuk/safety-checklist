@@ -7,8 +7,10 @@ templateImage.src = "template.png";
 
 templateImage.onload = () => { generateImage(); };
 
+// 날짜 초기값
 document.getElementById("date").value = new Date().toISOString().substring(0, 10);
 
+// 기타 입력창 토글 로직
 function toggleEtc(checkboxId, wrapId) {
     const cb = document.getElementById(checkboxId);
     const wrap = document.getElementById(wrapId);
@@ -20,6 +22,7 @@ function toggleEtc(checkboxId, wrapId) {
     generateImage();
 }
 
+// 자동 폰트 조절 그리기
 function drawTextAuto(text, x, y, maxWidth, maxFontSize) {
   if(!text) return;
   let fontSize = maxFontSize;
@@ -32,12 +35,26 @@ function drawTextAuto(text, x, y, maxWidth, maxFontSize) {
   ctx.fillText(text, x, y);
 }
 
-// 좌표값은 실제 템플릿에 맞게 직접 수정 필수
+/**
+ * 모든 체크박스 좌표 매핑 (x, y 좌표는 실제 PNG에 맞춰 수정 필수)
+ */
 const checkPositions = {
-  weather_clear: { x: 50, y: 100 }, machine_ect: { x: 50, y: 200 },
-  site_site_ect: { x: 50, y: 300 }, hot_ect: { x: 50, y: 400 },
-  cold_ect: { x: 50, y: 500 }, site_ect: { x: 50, y: 600 }
-  // ... 나머지 모든 체크박스 키값 포함 ...
+  // 기상 상태
+  weather_clear: { x: 100, y: 100 }, weather_wind: { x: 150, y: 100 }, weather_rain_or_snow: { x: 200, y: 100 }, weather_hot: { x: 250, y: 100 }, weather_cold: { x: 300, y: 100 },
+  // 건설장비
+  machine_crane: { x: 100, y: 200 }, machine_sky: { x: 150, y: 200 }, machine_sj: { x: 200, y: 200 }, machine_labbercar: { x: 250, y: 200 }, machine_forklift: { x: 300, y: 200 }, machine_dumptruck: { x: 350, y: 200 }, machine_excavator: { x: 400, y: 200 }, machine_pumpcar: { x: 450, y: 200 }, machine_mixtruck: { x: 500, y: 200 }, machine_ect: { x: 550, y: 200 },
+  // 현장 특성
+  site_road_outside: { x: 100, y: 300 }, site_road_inside: { x: 150, y: 300 }, site_road_narrow: { x: 200, y: 300 }, site_inside: { x: 250, y: 300 }, site_in_height: { x: 300, y: 300 }, site_high_height: { x: 350, y: 300 }, site_apart_parking: { x: 400, y: 300 }, site_drop_danger: { x: 450, y: 300 }, site_near_road: { x: 500, y: 300 }, site_near_voltage: { x: 550, y: 300 }, site_near_hivoltage: { x: 600, y: 300 }, site_site_ect: { x: 650, y: 300 },
+  // 공통사항
+  common_equipment: { x: 100, y: 400 }, common_machine: { x: 150, y: 400 }, common_health: { x: 200, y: 400 }, common_tool: { x: 250, y: 400 }, common_stop_work: { x: 300, y: 400 }, common_danger: { x: 350, y: 400 }, common_heavy: { x: 400, y: 400 },
+  // 혹서기
+  hot_thermometer: { x: 100, y: 500 }, hot_water: { x: 150, y: 500 }, hot_icebox: { x: 200, y: 500 }, hot_candy: { x: 250, y: 500 }, hot_rest: { x: 300, y: 500 }, hot_ect: { x: 350, y: 500 },
+  // 혹한기
+  cold_warmer: { x: 100, y: 600 }, cold_cloth: { x: 150, y: 600 }, cold_ect: { x: 200, y: 600 },
+  // 작업장 환경
+  site_roof: { x: 100, y: 700 }, site_rooftop: { x: 150, y: 700 }, site_pool: { x: 200, y: 700 }, site_steel_tower: { x: 250, y: 700 }, site_strong_pool: { x: 300, y: 700 }, site_inbuilding: { x: 350, y: 700 }, site_ect: { x: 400, y: 700 },
+  // 위험 요인
+  risk_fall: { x: 100, y: 800 }, risk_fall_ladder: { x: 150, y: 800 }, risk_fall_ladder_width: { x: 200, y: 800 }, risk_car_crush: { x: 250, y: 800 }, risk_heavy_machine: { x: 300, y: 800 }, risk_car_fall: { x: 350, y: 800 }, risk_electric: { x: 400, y: 800 }, risk_drop: { x: 450, y: 800 }, risk_boom: { x: 500, y: 800 }
 };
 
 function generateImage() {
@@ -47,12 +64,27 @@ function generateImage() {
   canvas.height = templateImage.height;
   ctx.drawImage(templateImage, 0, 0);
 
-  // 텍스트 그리기
+  // 일반 텍스트 드로잉
   drawTextAuto(document.getElementById("son_company").value, 100, 50, 200, 22);
-  drawTextAuto(document.getElementById("machine_ect_text").value, 300, 200, 150, 20);
-  // ... 필요한 텍스트 항목 반복 ...
+  drawTextAuto(document.getElementById("mother_company").value, 400, 50, 200, 22);
+  drawTextAuto(document.getElementById("date").value, 100, 80, 200, 22);
+  drawTextAuto(document.getElementById("location").value, 400, 80, 200, 22);
+  drawTextAuto(document.getElementById("what_do").value, 100, 110, 200, 22);
+  drawTextAuto(document.getElementById("inspector").value, 400, 110, 200, 22);
+  drawTextAuto(document.getElementById("fake_temperature").value, 100, 140, 100, 22);
+  drawTextAuto(document.getElementById("real_temperature").value, 200, 140, 100, 22);
+  drawTextAuto(document.getElementById("company_sos").value, 100, 350, 300, 22);
+  drawTextAuto(document.getElementById("danger_ect_point").value, 100, 650, 200, 22);
+  drawTextAuto(document.getElementById("danger_ect_todo").value, 350, 650, 200, 22);
 
-  // 체크박스 그리기
+  // '기타' 텍스트 드로잉
+  drawTextAuto(document.getElementById("machine_ect_text").value, 600, 200, 150, 20);
+  drawTextAuto(document.getElementById("site_site_ect_text").value, 700, 300, 150, 20);
+  drawTextAuto(document.getElementById("hot_ect_text").value, 400, 500, 150, 20);
+  drawTextAuto(document.getElementById("cold_ect_text").value, 250, 600, 150, 20);
+  drawTextAuto(document.getElementById("site_ect_text").value, 450, 700, 150, 20);
+
+  // 체크박스 드로잉
   document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
     const pos = checkPositions[cb.value];
     if (pos) {
@@ -62,7 +94,7 @@ function generateImage() {
     }
   });
 
-  // [핵심] 아이폰을 위해 캔버스 내용을 이미지 태그로 복사
+  // 아이폰 대응: 캔버스를 이미지 태그로 업데이트
   finalImg.src = canvas.toDataURL("image/png");
 }
 
