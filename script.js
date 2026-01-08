@@ -40,9 +40,9 @@ function drawTextAuto(text, x, y, maxWidth, maxFontSize) {
  */
 const checkPositions = {
   // 기상 상태
-  weather_clear: { x: 100, y: 100 }, weather_wind: { x: 150, y: 100 }, weather_rain_or_snow: { x: 200, y: 100 }, weather_hot: { x: 250, y: 100 }, weather_cold: { x: 300, y: 100 },
+  weather_clear: { x: 280, y: 492 }, weather_wind: { x: 375, y: 492 }, weather_rain_or_snow: { x: 470, y: 492 }, weather_hot: { x: 575, y: 492 }, weather_cold: { x: 670, y: 492 },
   // 건설장비
-  machine_crane: { x: 100, y: 200 }, machine_sky: { x: 150, y: 200 }, machine_sj: { x: 200, y: 200 }, machine_labbercar: { x: 250, y: 200 }, machine_forklift: { x: 300, y: 200 }, machine_dumptruck: { x: 350, y: 200 }, machine_excavator: { x: 400, y: 200 }, machine_pumpcar: { x: 450, y: 200 }, machine_mixtruck: { x: 500, y: 200 }, machine_ect: { x: 550, y: 200 },
+  machine_crane: { x: 280, y: 545 }, machine_sky: { x: 500, y: 545 }, machine_sj: { x: 623, y: 545 }, machine_labbercar: { x: 850, y: 545 }, machine_forklift: { x: 985, y: 545 }, machine_dumptruck: { x: 280, y: 575 }, machine_excavator: { x: 415, y: 575 }, machine_pumpcar: { x: 538, y:575 }, machine_mixtruck: { x: 660, y: 575 }, machine_ect: { x: 795, y: 575 },
   // 현장 특성
   site_road_outside: { x: 100, y: 300 }, site_road_inside: { x: 150, y: 300 }, site_road_narrow: { x: 200, y: 300 }, site_inside: { x: 250, y: 300 }, site_in_height: { x: 300, y: 300 }, site_high_height: { x: 350, y: 300 }, site_apart_parking: { x: 400, y: 300 }, site_drop_danger: { x: 450, y: 300 }, site_near_road: { x: 500, y: 300 }, site_near_voltage: { x: 550, y: 300 }, site_near_hivoltage: { x: 600, y: 300 }, site_site_ect: { x: 650, y: 300 },
   // 공통사항
