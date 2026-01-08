@@ -64,24 +64,27 @@ function generateImage() {
   ctx.drawImage(templateImage, 0, 0);
 
   // 일반 텍스트 드로잉
-  drawTextAuto(document.getElementById("son_company").value, 280, 210, 110, 22);
-  drawTextAuto(document.getElementById("mother_company").value, 655, 210, 155, 22);
-  drawTextAuto(document.getElementById("date").value, 100, 80, 200, 22);
-  drawTextAuto(document.getElementById("location").value, 400, 80, 200, 22);
-  drawTextAuto(document.getElementById("what_do").value, 100, 110, 200, 22);
-  drawTextAuto(document.getElementById("inspector").value, 400, 110, 200, 22);
-  drawTextAuto(document.getElementById("fake_temperature").value, 100, 140, 100, 22);
-  drawTextAuto(document.getElementById("real_temperature").value, 200, 140, 100, 22);
-  drawTextAuto(document.getElementById("company_sos").value, 100, 350, 300, 22);
-  drawTextAuto(document.getElementById("danger_ect_point").value, 100, 650, 200, 22);
-  drawTextAuto(document.getElementById("danger_ect_todo").value, 350, 650, 200, 22);
+  drawTextAuto(document.getElementById("son_company").value, 290, 210, 100, 24);
+  drawTextAuto(document.getElementById("mother_company").value, 655, 210, 155, 24);
+  drawTextAuto(document.getElementById("date").value, 1140, 210, 330, 24);
+  drawTextAuto(document.getElementById("location").value, 290, 280, 490, 24);
+  drawTextAuto(document.getElementById("what_do").value, 1140, 280, 330, 24);
+  drawTextAuto(document.getElementById("inspector").value, 290, 385, 1250, 26);
+  drawTextAuto(document.getElementById("fake_temperature").value, 950, 490, 100, 24);
+  drawTextAuto(document.getElementById("real_temperature").value, 1295, 490, 100, 24);
+  drawTextAuto(document.getElementById("come_here").value, 1290, 560, 280, 24);
+  drawTextAuto(document.getElementById("whatch_me").value, 1290, 625, 280, 24);
+  drawTextAuto(document.getElementById("company_sos").value, 290, 685, 510, 24);
+  drawTextAuto(document.getElementById("mother_company_sos").value, 1340, 685, 510, 24);
+  drawTextAuto(document.getElementById("danger_ect_point").value, 290, 1305, 310, 24);
+  drawTextAuto(document.getElementById("danger_ect_todo").value, 840, 1305, 725, 24);
 
   // '기타' 텍스트 드로잉
-  drawTextAuto(document.getElementById("machine_ect_text").value, 600, 200, 150, 20);
+  drawTextAuto(document.getElementById("machine_ect_text").value, 870, 575, 155, 20);
   drawTextAuto(document.getElementById("site_site_ect_text").value, 700, 300, 150, 20);
-  drawTextAuto(document.getElementById("hot_ect_text").value, 400, 500, 150, 20);
-  drawTextAuto(document.getElementById("cold_ect_text").value, 250, 600, 150, 20);
-  drawTextAuto(document.getElementById("site_ect_text").value, 450, 700, 150, 20);
+  drawTextAuto(document.getElementById("hot_ect_text").value, 1050, 1165, 120, 20);
+  drawTextAuto(document.getElementById("cold_ect_text").value, 14350, 1090, 120, 20);
+  drawTextAuto(document.getElementById("site_ect_text").value, 170, 2165, 50, 20);
 
   // 체크박스 드로잉
   document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
