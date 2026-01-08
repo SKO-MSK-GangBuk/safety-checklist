@@ -44,7 +44,7 @@ const checkPositions = {
   // 건설장비
   machine_crane: { x: 280, y: 545 }, machine_sky: { x: 500, y: 545 }, machine_sj: { x: 623, y: 545 }, machine_labbercar: { x: 850, y: 545 }, machine_forklift: { x: 985, y: 545 }, machine_dumptruck: { x: 280, y: 575 }, machine_excavator: { x: 415, y: 575 }, machine_pumpcar: { x: 538, y:575 }, machine_mixtruck: { x: 660, y: 575 }, machine_ect: { x: 795, y: 575 },
   // 현장 특성
-  site_road_outside: { x: 100, y: 300 }, site_road_inside: { x: 150, y: 300 }, site_road_narrow: { x: 200, y: 300 }, site_inside: { x: 250, y: 300 }, site_in_height: { x: 300, y: 300 }, site_high_height: { x: 350, y: 300 }, site_apart_parking: { x: 400, y: 300 }, site_drop_danger: { x: 450, y: 300 }, site_near_road: { x: 500, y: 300 }, site_near_voltage: { x: 550, y: 300 }, site_near_hivoltage: { x: 600, y: 300 }, site_site_ect: { x: 650, y: 300 },
+  site_road_outside: { x: 285, y: 780 }, site_road_inside: { x: 285, y: 810 }, site_road_narrow: { x: 1155, y: 780 }, site_inside: { x: 285, y: 810 }, site_in_height: { x: 720, y: 780 }, site_high_height: { x: 720, y: 810 }, site_apart_parking: { x: 720, y: 840 }, site_drop_danger: { x: 720, y: 870 }, site_near_road: { x: 1155, y: 780 }, site_near_voltage: { x: 1155, y: 810 }, site_near_hivoltage: { x: 1155, y: 840 }, site_site_ect: { x: 1155, y: 840 },
   // 공통사항
   common_equipment: { x: 100, y: 400 }, common_machine: { x: 150, y: 400 }, common_health: { x: 200, y: 400 }, common_tool: { x: 250, y: 400 }, common_stop_work: { x: 300, y: 400 }, common_danger: { x: 350, y: 400 }, common_heavy: { x: 400, y: 400 },
   // 혹서기
