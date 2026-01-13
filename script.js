@@ -82,7 +82,7 @@ function generateImage() {
 
   // '기타' 텍스트 드로잉
   drawTextAuto(document.getElementById("machine_ect_text").value, 870, 575, 155, 20);
-  drawTextAuto(document.getElementById("site_site_ect_text").value, 700, 300, 150, 20);
+  drawTextAuto(document.getElementById("site_site_ect_text").value, 1230, 870, 150, 20);
   drawTextAuto(document.getElementById("hot_ect_text").value, 1050, 1165, 120, 20);
   drawTextAuto(document.getElementById("cold_ect_text").value, 1430, 1090, 120, 20);
   drawTextAuto(document.getElementById("site_ect_text").value, 170, 2165, 50, 20);
