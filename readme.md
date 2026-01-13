@@ -1,3 +1,5 @@
+https://sko-msk-gangbuk.github.io/safety-checklist/index.html
+
 
 📋 현장 위험성 평가표 모바일 작성 도구 사용 가이드
 
