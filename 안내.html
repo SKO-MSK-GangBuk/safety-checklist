@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>현장 위험성 평가표 사용 안내</title>
+
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f5f6f8;
+  padding: 20px;
+  max-width: 720px;
+  margin: auto;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+h1 {
+  color: #c9302c;
+}
+.step {
+  margin: 15px 0;
+  padding-left: 10px;
+  border-left: 4px solid #007bff;
+}
+.download {
+  display: block;
+  margin-top: 20px;
+  padding: 15px;
+  background: #007bff;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #666;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>⚠️ 사용 안내</h1>
+
+  <p>
+    본 페이지는 <b>현장 업무용 위험성 평가표 HTML 도구</b>의
+    <u>다운로드 안내 페이지</u>입니다.
+  </p>
+
+  <p>
+    회사 보안 정책에 따라 <b>웹 페이지에서 직접 사용시 보안 문제 발생 가능성 존재에 따라 </b>,
+    <b>HTML 파일을 다운로드하여 기기 내에서 실행</b>해야 합니다.
+  </p>
+
+  <div class="step">
+    <b>① 아래 버튼을 눌러 HTML 파일 다운로드</b>
+  </div>
+
+  <div class="step">
+    <b>② 다운로드한 파일을 휴대폰 / PC에서 실행</b><br>
+    (Android는 다운로드 후 바로 실행 가능)<br>
+    (아이폰은 "HTML Viewer" 어플 다운로드 → "HTML Viewer" 어플 통해 실행)<br>
+    (아이폰은 Apple 정책상 기본 Safari App으로 Android와 동일 능력 구현 어려움)
+  </div>
+
+  <div class="step">
+    <b>③ 인터넷 연결 없이 사용 가능</b>
+  </div>
+
+  <a class="download" href="현장 위험성 평가표.html" download>
+    ⬇️ 현장 위험성 평가표 HTML 다운로드
+  </a>
+
+  <div class="note">
+    🔒 보안 안내<br>
+    - 외부 서버 통신 없음<br>
+    - 데이터 저장 / 전송 기능 없음<br>
+    - 로컬 브라우저에서만 실행되는 정적 HTML 파일<br>
+    - 최초 HTML 파일 다운로드만 온라인으로 연결<br>
+    - 이후 다운로드 된 HTML 파일은 오프라인 이용 가능 
+  </div>
+</div>
+
+<hr style="margin:30px 0;">
+
+<h3>📷 사용 방법</h3>
+
+<div style="display:flex; flex-direction:column; gap:15px;">
+  <img src="android_Guide_1.png" style="width:100%; border:1px solid #ccc;">
+  <img src="IOS_Guide_1.png" style="width:100%; border:1px solid #ccc;">
+</div>
+<script>
+function isMobile() {
+  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
+window.onload = () => {
+  if (isMobile()) {
+    document.getElementById("mobile-guide").style.display = "block";
+  } else {
+    document.getElementById("pc-guide").style.display = "block";
+  }
+};
+</script>
+</body>
+</html>
