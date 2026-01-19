@@ -28,7 +28,7 @@ label {
   font-weight: bold;
   margin-bottom: 5px;
 }
-/* 체크박스 전용 레이아웃/
+/* 체크박스 전용 레이아웃*/
 .checkbox-group {
   display: flex;
   flex-direction: column;
@@ -84,6 +84,9 @@ summary {
   font-weight: bold;
   cursor: pointer;
 }
+.hidden {
+  display: none;
+}
 #result-container {
   margin-top: 20px;
   width: 100%;
@@ -107,7 +110,7 @@ summary {
 
 <label>협력사명 <input type="text" id="son_company" oninput="generateImage()"></label>
 <label>도급사명 <input type="text" id="mother_company" oninput="generateImage()"></label>
-<label>일시 <input type="date" id="date" oninput="generateImage()"></label>
+<label>일시 <input type="datetime-local" id="date" oninput="generateImage()"></label>
 <label>국소명 <input type="text" id="location" oninput="generateImage()"></label>
 <label>작업공종 <input type="text" id="what_do" oninput="generateImage()"></label>
 <label>투입인원 <input type="text" id="inspector" oninput="generateImage()"></label>
@@ -250,16 +253,106 @@ summary {
 
 <details>
   <summary>위험 요인</summary>
-  <div class="checkbox-group">
-    <label><input type="checkbox" value="risk_fall" onchange="generateImage()"> 떨어짐</label>
-    <label><input type="checkbox" value="risk_fall_ladder" onchange="generateImage()"> 떨어짐(사다리)</label>
-    <label><input type="checkbox" value="risk_fall_ladder_width" onchange="generateImage()"> 사다리 가로서기</label>
-    <label><input type="checkbox" value="risk_car_crush" onchange="generateImage()"> 교통사고</label>
-    <label><input type="checkbox" value="risk_heavy_machine" onchange="generateImage()"> 장비 부딫힘/끼임</label>
-    <label><input type="checkbox" value="risk_car_fall" onchange="generateImage()"> 넘어짐</label>
-    <label><input type="checkbox" value="risk_electric" onchange="generateImage()"> 감전</label>
-    <label><input type="checkbox" value="risk_drop" onchange="generateImage()"> 낙하물 발생</label>
-    <label><input type="checkbox" value="risk_boom" onchange="generateImage()"> 화재 / 폭발</label>
+    <div class="parent-group">
+      <label>
+        <input type="checkbox" value="risk_fall" onchange="toggleChildrenVisible(this, 'risk_fall_group')"> 떨어짐
+      </label>
+
+      <div class="checkbox-group risk_fall_group">
+        <label><input type="checkbox" value="risk_fall_1" onchange="generateImage()"> 전주 균열/전주 수직상태 확인</label>
+        <label><input type="checkbox" value="risk_fall_2" onchange="generateImage()"> 수직사다리 고정상태 확인 및 수직 생명줄 또는 안전블록 설치</label>
+        <label><input type="checkbox" value="risk_fall_3" onchange="generateImage()"> 난간없는 옥상/옥탑/경사지붕 수평생명줄 또는 안전블록 설치</label>
+        <label><input type="checkbox" value="risk_fall_4" onchange="generateImage()"> 고소작업 시 안전고리 채결 및 경간 이동 시 이중 안전고리 교차체결</label>
+      </div>
+    </div>
+    <div class="parent-group">
+      <label>
+        <input type="checkbox" value="risk_fall_ladder" onchange="toggleChildrenVisible(this, 'risk_fall_ladder_group')"> 떨어짐(사다리)
+      </label>
+
+    <div class="checkbox-group risk_fall_ladder_group">
+      <label><input type="checkbox" value="risk_fall_ladder_1" onchange="generateImage()"> 사다리 상부 고정 및 아웃트리거 설치</label>
+      <label><input type="checkbox" value="risk_fall_ladder_2" onchange="generateImage()"> 사다리 안전작업 지침 준수</label>
+      <label><input type="checkbox" value="risk_fall_ladder_3" onchange="generateImage()"> 사다리 작업중 가로질러 넘어가는 과정에서 안전대 체결</label>
+    </div>
+  </div>
+  <div class="parent-group">
+      <label>
+        <input type="checkbox" value="risk_fall_ladder_width" onchange="toggleChildrenVisible(this, 'risk_fall_ladder_width_group')"> 사다리 가로서기
+    </label>
+
+    <div class="checkbox-group risk_fall_ladder_width_group">
+      <label><input type="checkbox" value="risk_fall_ladder_width_1" onchange="generateImage()"> 사다리 상부 고정 및 아웃트리거 설치</label>
+      <label><input type="checkbox" value="risk_fall_ladder_width_2" onchange="generateImage()"> 사다리 안전작업 지침 준수</label>
+      <label><input type="checkbox" value="risk_fall_ladder_width_3" onchange="generateImage()"> 사다리 작업중 가로질러 넘어가는 과정에서 안전대 체결</label>
+    </div>
+  </div>
+    <div class="parent-group">
+      <label>
+        <input type="checkbox" value="risk_car_crush" onchange="toggleChildrenVisible(this, 'risk_car_crush_group')"> 교통사고
+    </label>
+
+    <div class="checkbox-group risk_car_crush_group">
+      <label><input type="checkbox" value="risk_car_crush_1" onchange="generateImage()"> 안전시설물 설치 또는 차단 전문업체 활용</label>
+      <label><input type="checkbox" value="risk_car_crush_2" onchange="generateImage()"> 신호수 배치 및 신호체계 확인</label>
+    </div>
+  </div>
+  <div class="parent-group">
+      <label>
+        <input type="checkbox" value="risk_heavy_machine" onchange="toggleChildrenVisible(this, 'risk_heavy_machine_group')"> 장비 부딪힘/끼임
+    </label>
+
+    <div class="checkbox-group risk_heavy_machine_group">
+      <label><input type="checkbox" value="risk_heavy_machine_1" onchange="generateImage()"> 장비 유도자 배치 및 운전원과 신호체계 확인</label>
+      <label><input type="checkbox" value="risk_heavy_machine_2" onchange="generateImage()"> 작업반경 내 접근금지</label>
+    </div>
+  </div>
+    <div class="parent-group">
+      <label>
+        <input type="checkbox" value="risk_car_fall" onchange="toggleChildrenVisible(this, 'risk_car_fall_group')"> 넘어짐(인력/건설장비)
+    </label>
+
+    <div class="checkbox-group risk_car_fall_group">
+      <label><input type="checkbox" value="risk_car_fall_1" onchange="generateImage()"> 이동통로 정리정돈, 결빙/물기 제거</label>
+      <label><input type="checkbox" value="risk_car_fall_2" onchange="generateImage()"> 작업 전 지반상태 확인</label>
+      <label><input type="checkbox" value="risk_car_fall_3" onchange="generateImage()"> 건설장비는 허용된 제원 내 운행</label>
+      <label><input type="checkbox" value="risk_car_fall_4" onchange="generateImage()"> 아웃트리거 수평인출 및 받침대 설치</label>
+      <label><input type="checkbox" value="risk_car_fall_5" onchange="generateImage()"> 작업차량 고임목 설치</label>
+    </div>
+  </div>
+  <div class="parent-group">
+      <label>
+        <input type="checkbox" value="risk_electric" onchange="toggleChildrenVisible(this, 'risk_electric_group')"> 감전
+    </label>
+
+    <div class="checkbox-group risk_electric_group">
+      <label><input type="checkbox" value="risk_electric_1" onchange="generateImage()"> 감전위험에 노출된 환경 작업전 검전기로 누설전류 확인</label>
+      <label><input type="checkbox" value="risk_electric_2" onchange="generateImage()"> 특고압 3m 이상 이격 확인</label>
+      <label><input type="checkbox" value="risk_electric_3" onchange="generateImage()"> 노출형 변압기 휀스 내 접근금지</label>
+    </div>
+  </div>
+  <div class="parent-group">
+      <label>
+        <input type="checkbox" value="risk_drop" onchange="toggleChildrenVisible(this, 'risk_drop_group')"> 낙하물 발생
+    </label>
+
+    <div class="checkbox-group risk_drop_group">
+      <label><input type="checkbox" value="risk_drop_1" onchange="generateImage()"> 작업반경 내 또는 상부작업 시 직하단 접근금지</label>
+      <label><input type="checkbox" value="risk_drop_2" onchange="generateImage()"> 승인된 인양도구 사용슬링밸트, 와이어, 샤클 등</label>
+      <label><input type="checkbox" value="risk_drop_3" onchange="generateImage()"> 장비 설치 시 낙하물 방지망/삼각틀/도르래 등 설치</label>
+      <label><input type="checkbox" value="risk_drop_4" onchange="generateImage()"> 공구 이탈방지 죔줄 사용</label>
+    </div>
+  </div>
+  <div class="parent-group">
+      <label>
+        <input type="checkbox" value="risk_boom" onchange="toggleChildrenVisible(this, 'risk_boom_group')"> 낙하물 발생
+    </label>
+
+    <div class="checkbox-group risk_boom_group">
+      <label><input type="checkbox" value="risk_boom_1" onchange="generateImage()"> 화기작업 주변 인화물 제거, 소화기 비치</label>
+      <label><input type="checkbox" value="risk_boom_2" onchange="generateImage()"> 불티 발생 작업 시 불티비산방지포 사용</label>
+      <label><input type="checkbox" value="risk_boom_3" onchange="generateImage()"> 작업 중 흡연금지</label>
+    </div>
   </div>
 </details>
 
@@ -286,7 +379,6 @@ templateImage.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABoIAAAmTCAYAA
 
 templateImage.onload = () => generateImage();
 
-document.getElementById("date").value = new Date().toISOString().substring(0, 10);
 
 function toggleEtc(cbId, wrapId) {
   const cb = document.getElementById(cbId);
@@ -316,7 +408,15 @@ const checkPositions = {
   hot_thermometer: { x: 976, y: 1015 }, hot_water: { x: 976, y: 1045 }, hot_icebox: { x: 976, y: 1075 }, hot_candy: { x: 976, y: 1105 }, hot_rest: { x: 976, y: 1135 }, hot_ect: { x: 976, y: 1165 },
   cold_warmer: { x: 1360, y: 1030 }, cold_cloth: { x: 1360, y: 1060 }, cold_ect: { x: 1360, y: 1090 },
   site_roof: { x: 100, y: 1807 }, site_rooftop: { x: 100, y: 1867 }, site_pool: { x: 100, y: 1927 }, site_steel_tower: { x: 100, y: 1987 }, site_strong_pool: { x: 100, y: 2047 }, site_inbuilding: { x: 100, y: 2107 }, site_ect: { x: 100, y: 2167 },
-  risk_fall: { x: 285, y: 1440 }, risk_fall_ladder: { x: 285, y: 1550 }, risk_fall_ladder_width: { x: 315, y: 1580 }, risk_car_crush: { x: 285, y: 1665 }, risk_heavy_machine: { x: 285, y: 1750 }, risk_car_fall: { x: 285, y: 1875 }, risk_electric: { x: 285, y: 2015 }, risk_drop: { x: 285, y: 2140 }, risk_boom: { x: 285, y: 2265 }
+  risk_fall: { x: 285, y: 1440 }, risk_fall_ladder: { x: 285, y: 1550 }, risk_fall_ladder_width: { x: 315, y: 1580 }, risk_car_crush: { x: 285, y: 1665 }, risk_heavy_machine: { x: 285, y: 1750 }, risk_car_fall: { x: 285, y: 1875 }, risk_electric: { x: 285, y: 2015 }, risk_drop: { x: 285, y: 2140 }, risk_boom: { x: 285, y: 2265 },
+  risk_fall_1:{ x: 850, y: 1397 }, risk_fall_2:{ x: 850, y: 1430 }, risk_fall_3:{ x: 850, y: 1458 }, risk_fall_4:{ x: 850, y: 1487 },
+  risk_fall_ladder_1:{ x: 850, y: 1536 }, risk_fall_ladder_2:{ x: 850, y: 1568 }, risk_fall_ladder_3:{ x: 850, y: 1600 }, 
+  risk_fall_ladder_width_1:{ x: 850, y: 1536 }, risk_fall_ladder_width_2:{ x: 850, y: 1568 }, risk_fall_ladder_width_3:{ x: 850, y: 1600 }, 
+  risk_car_crush_1:{ x: 850, y: 1652 }, risk_car_crush_2:{ x: 850, y: 1682 }, risk_heavy_machine_1:{ x: 850, y: 1734 }, risk_heavy_machine_2:{ x: 850, y: 1765 }, 
+  risk_car_fall_1:{ x: 850, y: 1815 }, risk_car_fall_2:{ x: 850, y: 1845 },risk_car_fall_3:{ x: 850, y: 1875 }, risk_car_fall_4:{ x: 850, y: 1905 },risk_car_fall_5:{ x: 850, y: 1935 }, 
+  risk_electric_1: { x: 850, y: 1985 }, risk_electric_2: { x: 850, y: 2015 }, risk_electric_3: { x: 850, y: 2045 }, 
+  risk_drop_1: { x: 850, y: 2095 }, risk_drop_2: { x: 850, y: 2125 }, risk_drop_3: { x: 850, y: 2155 }, risk_drop_4: { x: 850, y: 2185 }, 
+  risk_boom_1: { x: 850, y: 2235 }, risk_boom_2: { x: 850, y: 2265 }, risk_boom_3: { x: 850, y: 2295 },
 };
 
 function generateImage() {
@@ -327,7 +427,7 @@ function generateImage() {
 
   drawTextAuto(document.getElementById("son_company").value, 290, 210, 100, 24);
   drawTextAuto(document.getElementById("mother_company").value, 655, 210, 155, 24);
-  drawTextAuto(document.getElementById("date").value, 1140, 210, 330, 24);
+  drawTextAuto(getDisplayDateTime(), 1140, 210, 330, 24);
   drawTextAuto(document.getElementById("location").value, 290, 280, 490, 24);
   drawTextAuto(document.getElementById("what_do").value, 1140, 280, 330, 24);
   drawTextAuto(document.getElementById("inspector").value, 290, 385, 1250, 26);
@@ -364,7 +464,7 @@ function generateImage() {
 
 function saveImage() {
   const a = document.createElement("a");
-  const dateVal = document.getElementById("date").value;
+  const dateVal = getDisplayDateTime().replace(/[: ]/g, '-');
   a.download = `평가표_${dateVal}.png`;
   a.href = canvas.toDataURL("image/png");
   a.click();
@@ -416,6 +516,72 @@ function saveSign() {
   signImage.src = signCanvas.toDataURL("image/png");
   closeSign();
 }
+function setCurrentDateTime() {
+    const now = new Date();
+
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const dd = String(now.getDate()).padStart(2, '0');
+    const hh = String(now.getHours()).padStart(2, '0');
+    const min = String(now.getMinutes()).padStart(2, '0');
+
+    // datetime-local 형식: YYYY-MM-DDTHH:mm
+    const formatted = `${yyyy}-${mm}-${dd}T${hh}:${min}`;
+
+    const dateInput = document.getElementById('date');
+    if (dateInput) {
+      dateInput.value = formatted;
+    }
+
+    // 자동 반영
+    if (typeof generateImage === "function") {
+      generateImage();
+    }
+  }
+
+  function getDisplayDateTime() {
+  const val = document.getElementById('date')?.value;
+  if (!val) return '';
+
+  // T → 공백
+  return val.replace('T', '  ');
+}
+
+  // 페이지 로드 시 자동 실행
+  window.addEventListener('DOMContentLoaded', setCurrentDateTime);
+function toggleChildrenVisible(parentCheckbox, groupClass) {
+  const group = document.querySelector('.' + groupClass);
+  const children = group.querySelectorAll('input[type="checkbox"]');
+
+  if (parentCheckbox.checked) {
+    group.classList.remove('hidden');
+    children.forEach(cb => cb.disabled = false);
+  } else {
+    group.classList.add('hidden');
+    children.forEach(cb => {
+      cb.checked = false;
+      cb.disabled = true;
+    });
+  }
+
+  if (typeof generateImage === "function") {
+    generateImage();
+  }
+}
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll(
+  '.risk_fall_group, .risk_fall_ladder_group, .risk_fall_ladder_width_group, ' +
+  '.risk_car_crush_group, .risk_heavy_machine_group, .risk_car_fall_group, ' +
+  '.risk_electric_group, .risk_drop_group, .risk_boom_group'
+).forEach(group => {
+  group.classList.add('hidden');
+  group.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.checked = false;
+    cb.disabled = true;
+  });
+});
+  });
 </script>
 </body>
 </html>
