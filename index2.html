@@ -379,7 +379,6 @@ templateImage.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABoIAAAmTCAYAA
 
 templateImage.onload = () => generateImage();
 
-document.getElementById("date").value = new Date().toISOString().substring(0, 10);
 
 function toggleEtc(cbId, wrapId) {
   const cb = document.getElementById(cbId);
@@ -428,7 +427,7 @@ function generateImage() {
 
   drawTextAuto(document.getElementById("son_company").value, 290, 210, 100, 24);
   drawTextAuto(document.getElementById("mother_company").value, 655, 210, 155, 24);
-  drawTextAuto(document.getElementById("date").value, 1140, 210, 330, 24);
+  drawTextAuto(getDisplayDateTime(), 1140, 210, 330, 24);
   drawTextAuto(document.getElementById("location").value, 290, 280, 490, 24);
   drawTextAuto(document.getElementById("what_do").value, 1140, 280, 330, 24);
   drawTextAuto(document.getElementById("inspector").value, 290, 385, 1250, 26);
@@ -465,7 +464,7 @@ function generateImage() {
 
 function saveImage() {
   const a = document.createElement("a");
-  const dateVal = document.getElementById("date").value;
+  const dateVal = getDisplayDateTime().replace(/[: ]/g, '-');
   a.download = `평가표_${dateVal}.png`;
   a.href = canvas.toDataURL("image/png");
   a.click();
@@ -527,7 +526,7 @@ function setCurrentDateTime() {
     const min = String(now.getMinutes()).padStart(2, '0');
 
     // datetime-local 형식: YYYY-MM-DDTHH:mm
-    const formatted = `${yyyy}-${mm}-${dd}  ${hh}:${min}`;
+    const formatted = `${yyyy}-${mm}-${dd}T${hh}:${min}`;
 
     const dateInput = document.getElementById('date');
     if (dateInput) {
@@ -539,6 +538,14 @@ function setCurrentDateTime() {
       generateImage();
     }
   }
+
+  function getDisplayDateTime() {
+  const val = document.getElementById('date')?.value;
+  if (!val) return '';
+
+  // T → 공백
+  return val.replace('T', '  ');
+}
 
   // 페이지 로드 시 자동 실행
   window.addEventListener('DOMContentLoaded', setCurrentDateTime);
@@ -557,12 +564,11 @@ function toggleChildrenVisible(parentCheckbox, groupClass) {
     });
   }
 
-  // 상위 클릭 시도 이미지 갱신
   if (typeof generateImage === "function") {
     generateImage();
   }
 }
-  
+
   window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll(
   '.risk_fall_group, .risk_fall_ladder_group, .risk_fall_ladder_width_group, ' +
