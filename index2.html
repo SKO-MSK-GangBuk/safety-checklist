@@ -527,7 +527,7 @@ function setCurrentDateTime() {
     const min = String(now.getMinutes()).padStart(2, '0');
 
     // datetime-local 형식: YYYY-MM-DDTHH:mm
-    const formatted = `${yyyy}-${mm}-${dd}T${hh}:${min}`;
+    const formatted = `${yyyy}-${mm}-${dd}  ${hh}:${min}`;
 
     const dateInput = document.getElementById('date');
     if (dateInput) {
@@ -562,8 +562,7 @@ function toggleChildrenVisible(parentCheckbox, groupClass) {
     generateImage();
   }
 }
-
-  // ✅ 페이지 로드 시 하위 체크박스 무조건 숨김
+  
   window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll(
   '.risk_fall_group, .risk_fall_ladder_group, .risk_fall_ladder_width_group, ' +
