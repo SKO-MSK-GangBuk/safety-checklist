@@ -616,7 +616,6 @@ function openSign(idx) {
 }
     
 function closeSign() { document.getElementById("signModal").style.display = "none"; }
-function clearSign() { sCtx.clearRect(0, 0, sCanvas.width, sCanvas.height); }
 function saveSign() {
   const img = new Image();
   img.onload = () => { signData[curIdx-1] = img; generateImage(); };
@@ -637,6 +636,15 @@ sCanvas.addEventListener("touchstart", (e) => { e.preventDefault(); isDrawing = 
 sCanvas.addEventListener("touchmove", (e) => { e.preventDefault(); if(!isDrawing) return; const p = getM(e); sCtx.lineTo(p.x, p.y); sCtx.stroke(); });
 sCanvas.addEventListener("touchend", () => isDrawing = false);
 
+function getDisplayDateTime() {
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = String(now.getMonth()+1).padStart(2,'0');
+  const d = String(now.getDate()).padStart(2,'0');
+  const h = String(now.getHours()).padStart(2,'0');
+  const min = String(now.getMinutes()).padStart(2,'0');
+  return `${y}-${m}-${d} ${h}:${min}`;
+}
 function saveImage() {
   const a = document.createElement("a");
   const dateVal = getDisplayDateTime().replace(/[: ]/g, '-');
