@@ -639,7 +639,8 @@ sCanvas.addEventListener("touchend", () => isDrawing = false);
 
 function saveImage() {
   const a = document.createElement("a");
-  a.download = "위험성평가표.png";
+  const dateVal = getDisplayDateTime().replace(/[: ]/g, '-');
+  a.download = `평가표_${dateVal}.png`;
   a.href = canvas.toDataURL("image/png");
   a.click();
 }
