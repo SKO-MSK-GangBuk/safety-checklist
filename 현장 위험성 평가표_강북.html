@@ -330,7 +330,7 @@ summary {
     </div>
     <div class="parent-group">
       <label>
-        <input type="checkbox" value="risk_fall_ladder" onchange="toggleChildrenVisible(this, 'risk_fall_ladder_group')"> 떨어짐(사다리)
+        <input type="checkbox" value="risk_fall_ladder" onchange="toggleChildrenVisible(this, 'risk_fall_ladder_group')"> 떨어짐(이동식 사다리)
       </label>
 
     <div class="checkbox-group risk_fall_ladder_group hidden">
@@ -343,7 +343,7 @@ summary {
   </div>
   <div class="parent-group">
       <label>
-        <input type="checkbox" value="risk_fall_ladder_width" onchange="toggleChildrenVisible(this, 'risk_fall_ladder_width_group')"> 사다리 가로서기
+        <input type="checkbox" value="risk_fall_ladder_width" onchange="toggleChildrenVisible(this, 'risk_fall_ladder_width_group')"> 사다리 상부 가로서기(자세) 작업
     </label>
 
     <div class="checkbox-group risk_fall_ladder_width_group hidden">
@@ -356,7 +356,7 @@ summary {
   </div>
     <div class="parent-group">
       <label>
-        <input type="checkbox" value="risk_car_crush" onchange="toggleChildrenVisible(this, 'risk_car_crush_group')"> 교통사고
+        <input type="checkbox" value="risk_car_crush" onchange="toggleChildrenVisible(this, 'risk_car_crush_group')"> 주행차량에 의한 교통사고
     </label>
 
     <div class="checkbox-group risk_car_crush_group hidden">
@@ -367,7 +367,7 @@ summary {
   </div>
   <div class="parent-group">
       <label>
-        <input type="checkbox" value="risk_heavy_machine" onchange="toggleChildrenVisible(this, 'risk_heavy_machine_group')"> 건설장비 부딪힘/끼임
+        <input type="checkbox" value="risk_heavy_machine" onchange="toggleChildrenVisible(this, 'risk_heavy_machine_group')"> 건설장비에 부딪힘/끼임
     </label>
 
     <div class="checkbox-group risk_heavy_machine_group hidden">
@@ -576,10 +576,10 @@ function generateImage() {
   site_roof: { x: 105, y: 1840 }, site_rooftop: { x: 105, y: 1900 }, site_pool: { x: 105, y: 1960 }, site_steel_tower: { x: 105, y: 2020 }, site_strong_pool: { x: 105, y: 2080 }, site_inbuilding: { x: 105, y: 2140 }, site_site_inside: { x: 105, y: 2200 }, site_metro: { x: 105, y: 2260 }, site_ect: { x: 105, y: 2320 },
   risk_fall: { x: 290, y: 1395 }, risk_fall_ladder: { x: 290, y: 1540 }, risk_fall_ladder_width: { x: 290, y: 1570 }, risk_car_crush: { x: 290, y: 1675 }, risk_heavy_machine: { x: 290, y: 1745 }, risk_heavy_machine_heat: { x: 290, y: 1775 }, risk_car_fall: { x: 290, y: 1900 }, risk_electric: { x: 290, y: 2025 }, risk_drop: { x: 290, y: 2140 }, risk_boom: { x: 290, y: 2260 }, risk_bee:{ x: 290, y: 2370 }, 
   risk_fall_1:{ x: 865, y: 1320 }, risk_fall_2:{ x: 865, y: 1350 }, risk_fall_3:{ x: 865, y: 1380 }, risk_fall_4:{ x: 865, y: 1410 }, risk_fall_5:{ x: 865, y: 1440 }, risk_fall_6:{ x: 865, y: 1470 },
-  risk_fall_ladder_1:{ x: 865, y: 1510 }, risk_fall_ladder_2:{ x: 865, y: 1540 }, risk_fall_ladder_3:{ x: 865, y: 1570 },  risk_fall_ladder_5:{ x: 865, y: 1600 }, risk_fall_ladder_6:{ x: 1285, y: 1600 },
-  risk_fall_ladder_width_1:{ x: 865, y: 1510 }, risk_fall_ladder_width_2:{ x: 865, y: 1540 }, risk_fall_ladder_width_3:{ x: 865, y: 1570 },  risk_fall_ladder_width_4:{ x: 865, y: 1600 }, risk_fall_ladder_width_5:{ x: 865, y: 1600 }, risk_fall_ladder_width_6:{ x: 1285, y: 1600 },
+  risk_fall_ladder_1:{ x: 865, y: 1510 }, risk_fall_ladder_2:{ x: 865, y: 1540 }, risk_fall_ladder_3:{ x: 865, y: 1570 },  risk_fall_ladder_4:{ x: 865, y: 1600 }, risk_fall_ladder_5:{ x: 1285, y: 1600 },
+  risk_fall_ladder_width_1:{ x: 865, y: 1510 }, risk_fall_ladder_width_2:{ x: 865, y: 1540 }, risk_fall_ladder_width_3:{ x: 865, y: 1570 },  risk_fall_ladder_width_4:{ x: 865, y: 1600 }, risk_fall_ladder_width_5:{ x: 1285, y: 1600 },
   risk_car_crush_1:{ x: 865, y: 1645 }, risk_car_crush_2:{ x: 865, y: 1675 }, risk_car_crush_3:{ x: 865, y: 1705 }, risk_heavy_machine_1:{ x: 865, y: 1745 }, risk_heavy_machine_2:{ x: 865, y: 1775 }, risk_heavy_machine_3:{ x: 865, y: 1805 }, risk_heavy_machine_heat_1: { x: 865, y: 1745 },  risk_heavy_machine_heat_2: { x: 865, y: 1775 }, risk_heavy_machine_heat_3: { x: 865, y: 1805 },
-  risk_car_fall_1:{ x: 865, y: 1645 }, risk_car_fall_2:{ x: 865, y: 1705 },risk_car_fall_3:{ x: 865, y: 1735 }, risk_car_fall_4:{ x: 865, y: 1765 },risk_car_fall_5:{ x: 865, y: 1795 }, risk_car_fall_6:{ x: 1252, y: 1840 }, risk_car_fall_7:{ x: 1250, y: 1870 }, 
+  risk_car_fall_1:{ x: 865, y: 1840 }, risk_car_fall_2:{ x: 865, y: 1870 },risk_car_fall_3:{ x: 865, y: 1900 }, risk_car_fall_4:{ x: 865, y: 1930 },risk_car_fall_5:{ x: 865, y: 1960 }, risk_car_fall_6:{ x: 1252, y: 1840 }, risk_car_fall_7:{ x: 1250, y: 1870 }, 
   risk_electric_1: { x: 865, y: 1995 }, risk_electric_2: { x: 865, y: 2025 }, risk_electric_3: { x: 865, y: 2055 }, risk_electric_4: { x: 1272, y: 2025 }, 
   risk_drop_1: { x: 865, y: 2095 }, risk_drop_2: { x: 865, y: 2125 }, risk_drop_3: { x: 865, y: 2155 }, risk_drop_4: { x: 865, y: 2185 }, risk_drop_5: { x: 1255, y: 2185 }, 
   risk_boom_1: { x: 865, y: 2228 }, risk_boom_2: { x: 865, y: 2258 }, risk_boom_3: { x: 865, y: 2288 }, risk_boom_4: { x: 1261, y: 2228 }, risk_boom_5: { x: 1261, y: 2258 }, 
