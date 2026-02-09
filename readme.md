@@ -60,4 +60,4 @@ https://sko-msk-gangbuk.github.io/safety-checklist/index.html
 
 
 2026-02-09
-- 중량물 포스터가 위험성 평가표와 함께 원페이지로 나오게 수정
+- 중량물 포스터가 위험성 평가표와 함께 원페이지로 나오게 수정(가로버전 세로버전)
