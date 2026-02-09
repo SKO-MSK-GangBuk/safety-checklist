@@ -625,16 +625,18 @@ function generateImage() {
     if(p) { ctx.fillStyle="blue"; ctx.font="30px Arial"; ctx.fillText("✔", p.x, p.y); }
   });
 
-  if(document.getElementById("risk_heavy_trigger").checked) {
+  const isHeavyVisible = document.getElementById("risk_heavy_trigger").checked || 
+                         document.getElementById("common_heavy_trigger").checked;
+
+  if (isHeavyVisible) {
     posterWrap.classList.remove("hidden");
     posterImgElement.src = posterBase64;
-  } else if(document.getElementById("common_heavy_trigger").checked) {
-    posterWrap.classList.remove("hidden");
-    posterImgElement.src = posterBase64;
-  } else{
-  posterWrap.classList.add("hidden");
-  finalImg.src = canvas.toDataURL("image/png");
+  } else {
+    posterWrap.classList.add("hidden");
   }
+
+  // 2. 메인 평가표 이미지 갱신 (조건문 밖에서 항상 실행)
+  finalImg.src = canvas.toDataURL("image/png");
 }
 
 // --- 서명 기능 ---
